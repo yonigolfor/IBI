@@ -11,7 +11,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var vm = AppViewModel()
-
+    //TODO: make the code more efficient
+    
     var body: some View {
         if vm.hasLoggedIn {
             MainView(vm: $vm)
@@ -19,15 +20,16 @@ struct ContentView: View {
                 .transition(.move(edge: .trailing))
                 .environment(\.locale, Locale(identifier: vm.chosenLanguage.langIdentifier))
                 .environment(\.layoutDirection, .leftToRight) // Force LTR layout direction
-//TODO: make the code more efficient
+                .environment(\.colorScheme, vm.isDarkMode ? .dark : .light)
         } else {
             LoginView(vm: $vm)
                 .transition(.move(edge: .leading))
                 .background(.cyan.gradient)
                 .environment(\.locale, Locale(identifier: vm.chosenLanguage.langIdentifier))
-                .environment(\.layoutDirection, .leftToRight) // Force LTR layout direction
+                .environment(\.layoutDirection, .leftToRight)
+                .environment(\.colorScheme, vm.isDarkMode ? .dark : .light)
         }
-       
+        
     }
 }
 

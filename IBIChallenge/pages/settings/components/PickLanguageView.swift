@@ -14,13 +14,14 @@ struct PickLanguageView: View {
         VStack{
             Text("Pick Language")
                 .font(.title)
-            Picker("Picker Name",
+            Picker("Language Selection",
                    selection: $chosenLanguage) {
                 ForEach(LanguageOptionType.allCases,
                         id: \.self) {
-                    Text($0.rawValue)
+                    Text($0.localizedString)
                 }
             }.pickerStyle(.segmented)
+            
         }
     }
 }

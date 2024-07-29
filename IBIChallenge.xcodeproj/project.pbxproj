@@ -32,6 +32,7 @@
 		53DBB0B22C56998200EE1F7F /* BiometricAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DBB0B12C56998200EE1F7F /* BiometricAuthViewModel.swift */; };
 		53DBB0B72C56A27200EE1F7F /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DBB0B62C56A27200EE1F7F /* ProductsListView.swift */; };
 		53F088412C58231100687E93 /* PickLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F088402C58231100687E93 /* PickLanguageView.swift */; };
+		53F088432C5836CC00687E93 /* ToggleDarkModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F088422C5836CC00687E93 /* ToggleDarkModeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		53DBB0B32C569BCA00EE1F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53DBB0B62C56A27200EE1F7F /* ProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListView.swift; sourceTree = "<group>"; };
 		53F088402C58231100687E93 /* PickLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLanguageView.swift; sourceTree = "<group>"; };
+		53F088422C5836CC00687E93 /* ToggleDarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleDarkModeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				53F088402C58231100687E93 /* PickLanguageView.swift */,
+				53F088422C5836CC00687E93 /* ToggleDarkModeView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				53DBB0AB2C568DC300EE1F7F /* AppViewModel.swift in Sources */,
 				53DBB0A12C5682F500EE1F7F /* LottieView.swift in Sources */,
 				53DBB09D2C567D1E00EE1F7F /* MainView.swift in Sources */,
+				53F088432C5836CC00687E93 /* ToggleDarkModeView.swift in Sources */,
 				530DF72D2C57A58F0089100E /* WebImageView.swift in Sources */,
 				53DBB0B22C56998200EE1F7F /* BiometricAuthViewModel.swift in Sources */,
 				53DBB0B02C56995600EE1F7F /* BiometricAuthView.swift in Sources */,

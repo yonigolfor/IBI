@@ -27,11 +27,20 @@ enum PageType: CaseIterable, Identifiable {
     }
 }
 
-enum LanguageOptionType: String, CaseIterable, Identifiable{
-    case en = "English"
-    case he = "Hebrew"
+enum LanguageOptionType: CaseIterable, Identifiable{
+    case en
+    case he
     
     var id: Self { self }
+    
+    var localizedString: LocalizedStringResource {
+        switch self {
+        case .en:
+            "English"
+        case .he:
+            "Hebrew"
+        }
+    }
     
     var langIdentifier: String {
         switch self {

@@ -21,12 +21,42 @@
         }
       }
     },
+    "English" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אנגלית"
+          }
+        }
+      }
+    },
     "Favorites" : {
       "localizations" : {
         "he" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "מועדפים"
+          }
+        }
+      }
+    },
+    "Hebrew" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "עברית"
+          }
+        }
+      }
+    },
+    "Language Selection" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בחירת שפה"
           }
         }
       }
@@ -43,7 +73,14 @@
       }
     },
     "Log Out" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התנתק"
+          }
+        }
+      }
     },
     "Login" : {
       "localizations" : {
@@ -86,10 +123,14 @@
       }
     },
     "Pick Language" : {
-
-    },
-    "Picker Name" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בחר שפה"
+          }
+        }
+      }
     },
     "Products" : {
       "localizations" : {
@@ -107,6 +148,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "הגדרות"
+          }
+        }
+      }
+    },
+    "toggle dark mode" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שנה תאורת מסך"
           }
         }
       }

@@ -19,7 +19,8 @@ struct SettingsView: View {
 
                 PickLanguageView(chosenLanguage: $appVM.chosenLanguage)
                 
-                
+                ToggleDarkModeView(action: appVM.toggleDarkMode)
+                .padding(.top, 20)
                 
                 Spacer()
                 
@@ -43,5 +44,4 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView(appVM: .constant(AppViewModel()))
-//        .environment(\.colorScheme, .dark)
 }
