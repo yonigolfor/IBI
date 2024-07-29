@@ -38,7 +38,6 @@ class ProductsListViewModel{
         do {
             let decodedData = try decoder.decode(ProductsReponse.self, from: data)
             self.products.append(contentsOf: decodedData.products)
-            
             self.canLoadMorePages = decodedData.products.count == self.productsPerPage
             self.currentPage += 1
         }

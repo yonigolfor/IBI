@@ -17,16 +17,26 @@ struct ContentView: View {
             MainView(vm: $vm)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.move(edge: .trailing))
-
+                .environment(\.locale, Locale(identifier: vm.chosenLanguage.langIdentifier))
+                .environment(\.layoutDirection, .leftToRight) // Force LTR layout direction
+//TODO: make the code more efficient
         } else {
             LoginView(vm: $vm)
                 .transition(.move(edge: .leading))
                 .background(.cyan.gradient)
+                .environment(\.locale, Locale(identifier: vm.chosenLanguage.langIdentifier))
+                .environment(\.layoutDirection, .leftToRight) // Force LTR layout direction
         }
        
     }
 }
 
-#Preview {
+#Preview("english") {
     ContentView()
 }
+
+#Preview("hebrew") {
+    ContentView()
+        .environment(\.locale, Locale(identifier: "HE"))
+}
+

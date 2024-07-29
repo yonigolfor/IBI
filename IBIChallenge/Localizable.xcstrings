@@ -1,0 +1,146 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "Authentication Error" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שגיאת אותנטיקציה"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מועדפים"
+          }
+        }
+      }
+    },
+    "Log out" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התנתק"
+          }
+        }
+      }
+    },
+    "Log Out" : {
+
+    },
+    "Login" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התחבר"
+          }
+        }
+      }
+    },
+    "Login with Touch ID/Face ID" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התחבר באמצעות זיהוי פנים/אצבע"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אישור"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "סיסמה"
+          }
+        }
+      }
+    },
+    "Pick Language" : {
+
+    },
+    "Picker Name" : {
+
+    },
+    "Products" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מוצרים"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הגדרות"
+          }
+        }
+      }
+    },
+    "User not found" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "משתמש לא נמצא"
+          }
+        }
+      }
+    },
+    "Username" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שם משתמש"
+          }
+        }
+      }
+    },
+    "Username or password are wrong." : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שם משתמש או סיסמה שגויים"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -15,28 +15,34 @@ struct MainView: View {
         VStack{
             TabView(selection: $selectedPage) {
                 ForEach(PageType.allCases) { page in
-                    getPageView(for: page)
+                    getPageView(for: page, vm: $vm)
                         .tabItem {
-                            Label(page.rawValue, systemImage: getSystemImage(for: page))
+                            Label(
+                                title: { Text(page.localizedString)
+                                },
+                                icon: { Image(systemName: getSystemImage(for: page))
+                                }
+                            )
                         }
                         .tag(page)
                 }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-
+        .onDisappear{
+            print("Logged out successfully")
+        }
+      
     }
 }
 
 @ViewBuilder
-private func getPageView(for page: PageType) -> some View {
+private func getPageView(for page: PageType, vm: Binding<AppViewModel>) -> some View {
     switch page {
     case .products:
-        ProductsListView()
+        ProductsListView(appVM: vm)
     case .settings:
-        Circle()
-            .fill(.purple)
+        SettingsView(appVM: vm)
     case .favorites:
         Circle()
             .fill(.cyan)

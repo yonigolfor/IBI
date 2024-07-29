@@ -11,6 +11,7 @@ import SwiftUI
 @Observable
 class AppViewModel {
     var hasLoggedIn: Bool = false
+    var chosenLanguage: LanguageOptionType = .en
     
     func loginUser(){
         withAnimation {
