@@ -27,12 +27,12 @@ class AppViewModel {
     func toggleDarkMode(){
         isDarkMode = isDarkMode ? false : true
         // update UserDefaults
-        UserDefaults.standard.set(isDarkMode, forKey: "is-dark-mode")
+        UserDefaults.standard.set(isDarkMode, forKey: K.UserDefaultsStorage.darkModeKey)
 
     }
     
     func setIsDarkModeUserDefaults(){
-        let isDarkModeStorage = UserDefaults.standard.bool(forKey: "is-dark-mode")
+        let isDarkModeStorage = UserDefaults.standard.bool(forKey: K.UserDefaultsStorage.darkModeKey)
         if isDarkModeStorage {
             self.isDarkMode = isDarkModeStorage
             // default is false, prevent rerenders.
@@ -40,11 +40,11 @@ class AppViewModel {
     }
     
     func setChosenLanguageUserDefaults(as language: LanguageOptionType){
-        UserDefaults.standard.set(self.chosenLanguage.langIdentifier, forKey: "selected-language")
+        UserDefaults.standard.set(self.chosenLanguage.langIdentifier, forKey: K.UserDefaultsStorage.selectedLanguageKey)
     }
     
     func getChosenLanguageUserDefaults() {
-        let selectedLanguageStorage = UserDefaults.standard.string(forKey: "selected-language")
+        let selectedLanguageStorage = UserDefaults.standard.string(forKey: K.UserDefaultsStorage.selectedLanguageKey)
         if let safeSelectedLanguageStorage = selectedLanguageStorage,
            safeSelectedLanguageStorage != self.chosenLanguage.langIdentifier{
             self.chosenLanguage = .he
