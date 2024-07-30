@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import RealmSwift
 
 @Observable
 class AppViewModel {
@@ -18,10 +19,49 @@ class AppViewModel {
     }
     var isDarkMode: Bool = false
     
+    var favoriteProducts: Results<FavoriteProduct>? {
+            didSet {
+                print("favorites in controller been set!")
+            }
+        }
+    
     init(){
-        //retrieve if is in dark mode
+        // Retrieve UserDefaults data
         setIsDarkModeUserDefaults()
         getChosenLanguageUserDefaults()
+        
+        // Retrieve Realm data - Favorites
+        getRealmFavorites()
+        
+        print("realm path = \(Realm.Configuration.defaultConfiguration.fileURL?.path)")
+        
+    }
+    
+    private func getRealmFavorites(){
+        let favorites = RealmManager.shared.getFavoriteProducts()
+        print("favorites = \(favorites)")
+        self.favoriteProducts = favorites
+    }
+    
+    private func addRealmFavorites(_ product: FavoriteProduct){
+        print("reach 2")
+        RealmManager.shared.addFavoriteProduct(product)
+    }
+    
+    private func removeRealmFavorite(product: FavoriteProduct){
+        RealmManager.shared.removeFavoriteProduct(product)
+    }
+    
+    func toggleRealmFavorite(shouldAdd: Bool, product: FavoriteProduct) {
+        print("toggle shouldAdd = \(shouldAdd)")
+        shouldAdd ? addRealmFavorites(product) : removeRealmFavorite(product: product)
+    }
+    
+    func productIsFavorite(_ productID: Int) -> Bool {
+        if let safeFavoriteProducts = self.favoriteProducts {
+            return safeFavoriteProducts.contains { $0.id == productID }
+        }
+        return false
     }
     
     func toggleDarkMode(){

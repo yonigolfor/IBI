@@ -5,13 +5,22 @@ struct ProductsListView: View {
     @Binding var appVM: AppViewModel
     @State var vm = ProductsListViewModel()
     
+    
+    private func onToggleFavorite(shouldAdd: Bool, product: Product) {
+        let favProduct = FavoriteProduct(id: product.id, title: product.title, price: product.price, thumbnail: product.thumbnail)
+        
+        appVM.toggleRealmFavorite(shouldAdd: shouldAdd, product: favProduct)
+    }
+    
     var body: some View {
         NavigationStack(root: {
             VStack{
                 if vm.products.count > 0 {
                     List(vm.products) { product in
                         NavigationLink {
-                            ProductDetailView(product: product)
+                            ProductDetailView(product: product, onToggleFavorite: {
+                                shouldAdd in onToggleFavorite(shouldAdd: shouldAdd, product: product)
+                            })
                         } label: {
                             ProductRowView(product: product)
                                 .onAppear{

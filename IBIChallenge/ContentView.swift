@@ -1,13 +1,4 @@
-//
-//  ContentView.swift
-//  IBIChallenge
-//
-//  Created by Yoni Golfor on 28/07/2024.
-//
-
 import SwiftUI
-
-
 
 struct ContentView: View {
     @State var vm = AppViewModel()
@@ -24,16 +15,17 @@ struct ContentView: View {
                }
            }
            .frame(maxWidth: .infinity, maxHeight: .infinity)
-           .applyCommonEnvironmentModifiers(vm: vm)
+           .applyCommonEnvironmentModifiers(chosenLanguage: vm.chosenLanguage, isDarkMode: vm.isDarkMode)
+           
        }
 }
 
 extension View {
-    func applyCommonEnvironmentModifiers(vm: AppViewModel) -> some View {
+    func applyCommonEnvironmentModifiers(chosenLanguage: LanguageOptionType, isDarkMode: Bool) -> some View {
         self
-            .environment(\.locale, Locale(identifier: vm.chosenLanguage.langIdentifier))
+            .environment(\.locale, Locale(identifier: chosenLanguage.langIdentifier))
             .environment(\.layoutDirection, .leftToRight)
-            .environment(\.colorScheme, vm.isDarkMode ? .dark : .light)
+            .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
 }
 

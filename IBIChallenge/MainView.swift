@@ -44,8 +44,7 @@ private func getPageView(for page: PageType, vm: Binding<AppViewModel>) -> some 
     case .settings:
         SettingsView(appVM: vm)
     case .favorites:
-        Circle()
-            .fill(.cyan)
+        FavoritesView()
     }
 }
 private func getSystemImage(for page: PageType) -> String {

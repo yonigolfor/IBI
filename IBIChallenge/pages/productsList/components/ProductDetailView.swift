@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ProductDetailView: View {
+    @ObservedResults(FavoriteProduct.self) var allFavorites
     let product: Product
+    let onToggleFavorite: (_ shouldAdd: Bool) -> Void
+    
+    @State var localIsFavorite: Bool = false
+
     
     var body: some View {
         VStack(spacing: 15) {
+            Spacer()
+
             WebImageView(imageString: product.thumbnail, isLargeImage: true)
             
             Text(product.title)
@@ -36,14 +44,32 @@ struct ProductDetailView: View {
                     }
                 }
             }
+            Spacer()
+            Button(action: handleFavoriteBtn, label: {
+                Image(systemName: localIsFavorite ? "heart.fill" : "heart")
+                    .foregroundStyle(localIsFavorite ? .pink : .black)
+                    .font(.title)
+                    .scaleEffect(localIsFavorite ? 1.6 : 1.1)
+            })
+            .padding(.bottom, 16)
+           
+            
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.cyan)
+        .onAppear{
+            localIsFavorite = allFavorites.contains { $0.id == product.id }
+        }
+    }
+    
+    private func handleFavoriteBtn(){
+        self.localIsFavorite.toggle()
+        onToggleFavorite(self.localIsFavorite)
     }
 }
 
 
 #Preview {
-    ProductDetailView(product: Product(id: 0, title: "aa", description: "1111", price: 12, brand: "GOLFOR", thumbnail: "123", images: nil))
+    ProductDetailView(product: Product(id: 0, title: "aa", description: "1111", price: 12, brand: "GOLFOR", thumbnail: "123", images: nil), onToggleFavorite: {shouldAdd in print(shouldAdd) })
 }
