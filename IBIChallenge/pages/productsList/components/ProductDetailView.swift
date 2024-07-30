@@ -12,8 +12,10 @@ struct ProductDetailView: View {
     @ObservedResults(FavoriteProduct.self) var allFavorites
     let product: Product
     let onToggleFavorite: (_ shouldAdd: Bool) -> Void
+    let onUpdateProduct: (_ product: Product) -> Void
     
     @State var localIsFavorite: Bool = false
+    @State var showFormSheet: Bool = false
 
     
     var body: some View {
@@ -61,6 +63,19 @@ struct ProductDetailView: View {
         .onAppear{
             localIsFavorite = allFavorites.contains { $0.id == product.id }
         }
+        .sheet(isPresented: $showFormSheet, content: {
+            NewProductFormView(onFinish: {updatedProduct in
+                showFormSheet = false
+                onUpdateProduct(updatedProduct)
+            }, product: product)
+        })
+        .toolbar(content: {
+            Button(action: {
+                self.showFormSheet = true
+            }, label: {
+                Text("Edit")
+            })
+        })
     }
     
     private func handleFavoriteBtn(){
@@ -71,5 +86,5 @@ struct ProductDetailView: View {
 
 
 #Preview {
-    ProductDetailView(product: Product(id: 0, title: "aa", description: "1111", price: 12, brand: "GOLFOR", thumbnail: "123", images: nil), onToggleFavorite: {shouldAdd in print(shouldAdd) })
+    ProductDetailView(product: Product(id: 0, title: "aa", description: "1111", price: 12, brand: "GOLFOR", thumbnail: "123", images: nil), onToggleFavorite: {shouldAdd in print(shouldAdd) }, onUpdateProduct: {product in })
 }

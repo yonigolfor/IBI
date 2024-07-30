@@ -6,9 +6,19 @@ class ProductsListViewModel{
     var products: [Product] = [Product]()
     var currentPage: Int = 0
     var isLoading: Bool = false
+    var showNewProductSheet: Bool = false
     private var canLoadMorePages: Bool = true
     private var productsPerPage: Int = 5
     
+    func onUpdateProduct(p: Product) {
+        if let index = products.firstIndex(where: { $0.id == p.id }) {
+            self.products[index] = p
+        }
+    }
+    func onAddNewProduct(_ product: Product){
+        self.showNewProductSheet = false
+        self.products.insert(product, at: 0)
+    }
     
     func fetchProducts() {
         guard !isLoading && canLoadMorePages else { return }

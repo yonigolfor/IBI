@@ -22,6 +22,8 @@
 		53B9C2062C56B7870050F7AF /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9C2052C56B7870050F7AF /* ProductManager.swift */; };
 		53B9C2092C56C82B0050F7AF /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9C2082C56C82B0050F7AF /* ProductRowView.swift */; };
 		53B9C20B2C56CF480050F7AF /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B9C20A2C56CF480050F7AF /* ProductDetailView.swift */; };
+		53D8D6632C59468A003682EB /* NewProductFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8D6622C59468A003682EB /* NewProductFormView.swift */; };
+		53D8D6662C594CBD003682EB /* NewProductsFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8D6652C594CBD003682EB /* NewProductsFormViewModel.swift */; };
 		53DBB08C2C56762300EE1F7F /* IBIChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DBB08B2C56762300EE1F7F /* IBIChallengeApp.swift */; };
 		53DBB08E2C56762300EE1F7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DBB08D2C56762300EE1F7F /* ContentView.swift */; };
 		53DBB0902C56762400EE1F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53DBB08F2C56762400EE1F7F /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		53B9C2052C56B7870050F7AF /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		53B9C2082C56C82B0050F7AF /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
 		53B9C20A2C56CF480050F7AF /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		53D8D6622C59468A003682EB /* NewProductFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductFormView.swift; sourceTree = "<group>"; };
+		53D8D6652C594CBD003682EB /* NewProductsFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductsFormViewModel.swift; sourceTree = "<group>"; };
 		53DBB0882C56762300EE1F7F /* IBIChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBIChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DBB08B2C56762300EE1F7F /* IBIChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBIChallengeApp.swift; sourceTree = "<group>"; };
 		53DBB08D2C56762300EE1F7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,10 +199,20 @@
 		53B9C2072C56C81C0050F7AF /* components */ = {
 			isa = PBXGroup;
 			children = (
+				53D8D6642C594C9F003682EB /* newProductForm */,
 				53B9C2082C56C82B0050F7AF /* ProductRowView.swift */,
 				53B9C20A2C56CF480050F7AF /* ProductDetailView.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		53D8D6642C594C9F003682EB /* newProductForm */ = {
+			isa = PBXGroup;
+			children = (
+				53D8D6622C59468A003682EB /* NewProductFormView.swift */,
+				53D8D6652C594CBD003682EB /* NewProductsFormViewModel.swift */,
+			);
+			path = newProductForm;
 			sourceTree = "<group>";
 		};
 		53DBB07F2C56762300EE1F7F = {
@@ -412,7 +426,9 @@
 				53DBB09B2C5676AB00EE1F7F /* LoginView.swift in Sources */,
 				53AD1C4A2C58F226003DA6E0 /* Constants.swift in Sources */,
 				53B9C2012C56B3300050F7AF /* ProductsListViewModel.swift in Sources */,
+				53D8D6632C59468A003682EB /* NewProductFormView.swift in Sources */,
 				53AD1C4F2C5903B8003DA6E0 /* RealmManager.swift in Sources */,
+				53D8D6662C594CBD003682EB /* NewProductsFormViewModel.swift in Sources */,
 				53B9C2092C56C82B0050F7AF /* ProductRowView.swift in Sources */,
 				530DF7412C57D4CA0089100E /* SettingsView.swift in Sources */,
 				53DBB08E2C56762300EE1F7F /* ContentView.swift in Sources */,

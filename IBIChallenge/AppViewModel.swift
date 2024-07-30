@@ -33,7 +33,7 @@ class AppViewModel {
         // Retrieve Realm data - Favorites
         getRealmFavorites()
         
-        print("realm path = \(Realm.Configuration.defaultConfiguration.fileURL?.path)")
+//        print("realm path = \(Realm.Configuration.defaultConfiguration.fileURL?.path)")
         
     }
     

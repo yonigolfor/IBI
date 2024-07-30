@@ -20,6 +20,8 @@ struct ProductsListView: View {
                         NavigationLink {
                             ProductDetailView(product: product, onToggleFavorite: {
                                 shouldAdd in onToggleFavorite(shouldAdd: shouldAdd, product: product)
+                            }, onUpdateProduct: { updatedProduct in
+                                vm.onUpdateProduct(p: updatedProduct)
                             })
                         } label: {
                             ProductRowView(product: product)
@@ -40,20 +42,27 @@ struct ProductsListView: View {
                         .scaleEffect(CGSize(width: 1.5, height: 1.5))
                         .tint(.blue)
                         .onAppear{
-                            print("in onAppear")
                             guard appVM.hasLoggedIn else {
                                 vm.products = []
                                 return
                             }
-                            print("reach here")
                             if vm.products.isEmpty {
-                                print("products is empty")
                                 vm.fetchProducts()
                             }
                         }
                 }
             }
             .navigationTitle("Products")
+            .toolbar{
+                Button(action: {
+                    vm.showNewProductSheet = true
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
+            .sheet(isPresented: $vm.showNewProductSheet, content: {
+                NewProductFormView(onFinish: vm.onAddNewProduct, product: nil)
+            })
             
         })
        
@@ -64,3 +73,4 @@ struct ProductsListView: View {
 #Preview {
     ProductsListView(appVM: .constant(AppViewModel()))
 }
+
