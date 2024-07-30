@@ -39,12 +39,10 @@ class AppViewModel {
     
     private func getRealmFavorites(){
         let favorites = RealmManager.shared.getFavoriteProducts()
-        print("favorites = \(favorites)")
         self.favoriteProducts = favorites
     }
     
     private func addRealmFavorites(_ product: FavoriteProduct){
-        print("reach 2")
         RealmManager.shared.addFavoriteProduct(product)
     }
     
@@ -53,7 +51,6 @@ class AppViewModel {
     }
     
     func toggleRealmFavorite(shouldAdd: Bool, product: FavoriteProduct) {
-        print("toggle shouldAdd = \(shouldAdd)")
         shouldAdd ? addRealmFavorites(product) : removeRealmFavorite(product: product)
     }
     

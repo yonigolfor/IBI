@@ -63,12 +63,7 @@ struct ProductDetailView: View {
         .onAppear{
             localIsFavorite = allFavorites.contains { $0.id == product.id }
         }
-        .sheet(isPresented: $showFormSheet, content: {
-            NewProductFormView(onFinish: {updatedProduct in
-                showFormSheet = false
-                onUpdateProduct(updatedProduct)
-            }, product: product)
-        })
+        .sheet(isPresented: $showFormSheet, content: presentNewProductForm)
         .toolbar(content: {
             Button(action: {
                 self.showFormSheet = true
@@ -76,6 +71,16 @@ struct ProductDetailView: View {
                 Text("Edit")
             })
         })
+    }
+    
+    func presentNewProductForm() -> some View {
+        NewProductFormView(
+            onFinish: { updatedProduct in
+                showFormSheet = false
+                onUpdateProduct(updatedProduct)
+            },
+            product: product
+        )
     }
     
     private func handleFavoriteBtn(){

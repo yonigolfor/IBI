@@ -22,13 +22,34 @@
       }
     },
     "Brand" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מותג"
+          }
+        }
+      }
     },
     "Description" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "תיאור"
+          }
+        }
+      }
     },
     "Edit" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ערוך"
+          }
+        }
+      }
     },
     "English" : {
       "localizations" : {
@@ -36,6 +57,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "אנגלית"
+          }
+        }
+      }
+    },
+    "Error" : {
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שגיאה"
           }
         }
       }
@@ -61,7 +92,14 @@
       }
     },
     "Image URL" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כתובת התמונה"
+          }
+        }
+      }
     },
     "Language Selection" : {
       "localizations" : {
@@ -69,17 +107,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "בחירת שפה"
-          }
-        }
-      }
-    },
-    "Log out" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "התנתק"
           }
         }
       }
@@ -115,10 +142,24 @@
       }
     },
     "New Product" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מוצר חדש"
+          }
+        }
+      }
     },
     "No Favorites Found" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אין מועדפים כרגע"
+          }
+        }
+      }
     },
     "OK" : {
       "localizations" : {
@@ -151,10 +192,24 @@
       }
     },
     "Price" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מחיר"
+          }
+        }
+      }
     },
     "Product Information" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מידע על המוצר"
+          }
+        }
+      }
     },
     "Products" : {
       "localizations" : {
@@ -177,10 +232,24 @@
       }
     },
     "Submit" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אישור"
+          }
+        }
+      }
     },
     "Title" : {
-
+      "localizations" : {
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כותרת"
+          }
+        }
+      }
     },
     "toggle dark mode" : {
       "localizations" : {
