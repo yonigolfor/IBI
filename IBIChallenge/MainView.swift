@@ -29,9 +29,6 @@ struct MainView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onDisappear{
-            print("Logged out successfully")
-        }
       
     }
 }

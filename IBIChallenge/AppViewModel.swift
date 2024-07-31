@@ -19,11 +19,7 @@ class AppViewModel {
     }
     var isDarkMode: Bool = false
     
-    var favoriteProducts: Results<FavoriteProduct>? {
-            didSet {
-                print("favorites in controller been set!")
-            }
-        }
+    var favoriteProducts: Results<FavoriteProduct>?
     
     init(){
         // Retrieve UserDefaults data
@@ -33,10 +29,12 @@ class AppViewModel {
         // Retrieve Realm data - Favorites
         getRealmFavorites()
         
-//        print("realm path = \(Realm.Configuration.defaultConfiguration.fileURL?.path)")
-        
+        printRealmUrlPath()
     }
     
+    private func printRealmUrlPath() {
+        print("\(String(describing: Realm.Configuration.defaultConfiguration.fileURL?.path))")
+    }
     private func getRealmFavorites(){
         let favorites = RealmManager.shared.getFavoriteProducts()
         self.favoriteProducts = favorites
@@ -52,6 +50,13 @@ class AppViewModel {
     
     func toggleRealmFavorite(shouldAdd: Bool, product: FavoriteProduct) {
         shouldAdd ? addRealmFavorites(product) : removeRealmFavorite(product: product)
+    }
+    func realmUpdateFavoriteProduct(product: Product){
+        guard let favoriteProducts = self.favoriteProducts else { return }
+        let productInFavorites = favoriteProducts.contains { $0.id == product.id }
+        if productInFavorites {
+            RealmManager.shared.updateFavoriteProduct(product: product)
+        }
     }
     
     func productIsFavorite(_ productID: Int) -> Bool {

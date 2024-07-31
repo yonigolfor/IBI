@@ -29,6 +29,8 @@ struct LoginView: View {
             TextField("Username", text: $username)
                 .padding()
                 .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
            
             SecureField("Password", text: $password)
                 .padding()
@@ -36,7 +38,7 @@ struct LoginView: View {
             
             Button("Login") {
                 // Simulate login validation
-                if username == successUser && password == successPassword {
+                if username.lowercased() == successUser.lowercased() && password == successPassword {
                     vm.loginUser()
                 } else {
                     showAlert = true

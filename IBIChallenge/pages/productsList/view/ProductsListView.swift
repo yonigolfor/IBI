@@ -18,10 +18,12 @@ struct ProductsListView: View {
                 if vm.products.count > 0 {
                     List(vm.products) { product in
                         NavigationLink {
-                            ProductDetailView(product: product, onToggleFavorite: {
-                                shouldAdd in onToggleFavorite(shouldAdd: shouldAdd, product: product)
+                            ProductDetailView(product: product, onToggleFavorite: { shouldAdd in
+                                onToggleFavorite(shouldAdd: shouldAdd, product: product)
                             }, onUpdateProduct: { updatedProduct in
                                 vm.onUpdateProduct(p: updatedProduct)
+                                // checks if needs to update a favorite
+                                appVM.realmUpdateFavoriteProduct(product: updatedProduct)
                             })
                         } label: {
                             ProductRowView(product: product)

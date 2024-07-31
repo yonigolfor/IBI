@@ -14,9 +14,28 @@ final class RealmManager {
         }
     }
 
+    func updateFavoriteProduct(product: Product) {
+        do {
+            try realm.write {
+                // Fetch all favorite products
+                let favoriteProducts = realm.objects(FavoriteProduct.self)
+                
+                // Find the product that matches the new product's ID
+                if let existingProduct = favoriteProducts.where({ $0.id == product.id }).first {
+                    // Update the properties of the existing product
+                    existingProduct.title = product.title
+                    existingProduct.price = product.price
+                    existingProduct.thumbnail = product.thumbnail
+                    // Update other properties as needed
+                } else {
+                    print("Product with ID \(product.id) not found.")
+                }
+            }
+        } catch {
+            print("Error adding product: \(error)")
+        }
+    }
     func addFavoriteProduct(_ product: FavoriteProduct) {
-        print("reach 3. product \(product)")
-
         do {
             try realm.write {
                 realm.add(product, update: .modified)
