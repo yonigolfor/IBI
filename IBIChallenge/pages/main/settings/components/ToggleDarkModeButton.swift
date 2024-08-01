@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ToggleDarkModeView: View {
+struct ToggleDarkModeButton: View {
     let action: () -> Void
     
     var body: some View {
         Button(action: action, label: {
-            Text("toggle dark mode")
+            Text("Toggle Dark Mode")
                 .padding()
                 .background(.orange.gradient)
                 .clipShape(RoundedRectangle(cornerRadius: 28))
@@ -22,5 +22,5 @@ struct ToggleDarkModeView: View {
 }
 
 #Preview {
-    ToggleDarkModeView(action: {})
+    ToggleDarkModeButton(action: {})
 }
