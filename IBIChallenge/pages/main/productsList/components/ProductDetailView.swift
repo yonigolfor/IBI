@@ -20,8 +20,9 @@ struct ProductDetailView: View {
     
     var body: some View {
         VStack(spacing: 15) {
+            ScrollView{
             Spacer()
-
+            
             WebImageView(imageString: product.thumbnail, isLargeImage: true)
             
             Text(product.title)
@@ -34,14 +35,14 @@ struct ProductDetailView: View {
             }
             Text(product.formattedPrice)
                 .font(.title)
-           
+            
             
             if let images = product.images{
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(images, id: \.self) { imageUrl in
                             WebImageView(imageString: imageUrl, isLargeImage: true)
-                            .padding(5)
+                                .padding(5)
                         }
                     }
                 }
@@ -54,8 +55,8 @@ struct ProductDetailView: View {
                     .scaleEffect(localIsFavorite ? 1.6 : 1.1)
             })
             .padding(.bottom, 16)
-           
             
+        }
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -41,7 +41,7 @@
 		53DBB0B22C56998200EE1F7F /* BiometricAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DBB0B12C56998200EE1F7F /* BiometricAuthViewModel.swift */; };
 		53DBB0B72C56A27200EE1F7F /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DBB0B62C56A27200EE1F7F /* ProductsListView.swift */; };
 		53F088412C58231100687E93 /* PickLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F088402C58231100687E93 /* PickLanguageView.swift */; };
-		53F088432C5836CC00687E93 /* ToggleDarkModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F088422C5836CC00687E93 /* ToggleDarkModeView.swift */; };
+		53F088432C5836CC00687E93 /* ToggleDarkModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F088422C5836CC00687E93 /* ToggleDarkModeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,7 +91,7 @@
 		53DBB0B32C569BCA00EE1F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53DBB0B62C56A27200EE1F7F /* ProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListView.swift; sourceTree = "<group>"; };
 		53F088402C58231100687E93 /* PickLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLanguageView.swift; sourceTree = "<group>"; };
-		53F088422C5836CC00687E93 /* ToggleDarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleDarkModeView.swift; sourceTree = "<group>"; };
+		53F088422C5836CC00687E93 /* ToggleDarkModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleDarkModeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,19 +108,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		530DF72B2C57A5810089100E /* webImage */ = {
-			isa = PBXGroup;
-			children = (
-				530DF72C2C57A58F0089100E /* WebImageView.swift */,
-			);
-			path = webImage;
-			sourceTree = "<group>";
-		};
 		530DF73F2C57D48F0089100E /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				53E77CAB2C5BA257007CBD48 /* view */,
 				53F0883F2C58230000687E93 /* components */,
-				530DF7402C57D4CA0089100E /* SettingsView.swift */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -242,14 +234,13 @@
 				53AD1C482C58F213003DA6E0 /* utils */,
 				53DBB0B42C56A21F00EE1F7F /* pages */,
 				53DBB0B32C569BCA00EE1F7F /* Info.plist */,
-				53DBB0AE2C56994700EE1F7F /* BiometricAuth */,
+				53DBB0AE2C56994700EE1F7F /* biometricAuth */,
 				53DBB0A52C56874500EE1F7F /* lottieFiles */,
 				53DBB09E2C5682E100EE1F7F /* components */,
 				53DBB08B2C56762300EE1F7F /* IBIChallengeApp.swift */,
 				53DBB08D2C56762300EE1F7F /* ContentView.swift */,
 				53DBB08F2C56762400EE1F7F /* Assets.xcassets */,
 				53DBB0912C56762400EE1F7F /* Preview Content */,
-				53DBB09C2C567D1E00EE1F7F /* MainView.swift */,
 				53DBB0AA2C568DC300EE1F7F /* AppViewModel.swift */,
 				53DBB0AC2C56918800EE1F7F /* AppModel.swift */,
 				530DF73D2C57CB650089100E /* Localizable.xcstrings */,
@@ -276,18 +267,10 @@
 		53DBB09E2C5682E100EE1F7F /* components */ = {
 			isa = PBXGroup;
 			children = (
-				530DF72B2C57A5810089100E /* webImage */,
-				53DBB09F2C5682E900EE1F7F /* lottie */,
+				53DBB0A02C5682F500EE1F7F /* LottieView.swift */,
+				530DF72C2C57A58F0089100E /* WebImageView.swift */,
 			);
 			path = components;
-			sourceTree = "<group>";
-		};
-		53DBB09F2C5682E900EE1F7F /* lottie */ = {
-			isa = PBXGroup;
-			children = (
-				53DBB0A02C5682F500EE1F7F /* LottieView.swift */,
-			);
-			path = lottie;
 			sourceTree = "<group>";
 		};
 		53DBB0A52C56874500EE1F7F /* lottieFiles */ = {
@@ -299,21 +282,19 @@
 			path = lottieFiles;
 			sourceTree = "<group>";
 		};
-		53DBB0AE2C56994700EE1F7F /* BiometricAuth */ = {
+		53DBB0AE2C56994700EE1F7F /* biometricAuth */ = {
 			isa = PBXGroup;
 			children = (
 				53DBB0AF2C56995600EE1F7F /* BiometricAuthView.swift */,
 				53DBB0B12C56998200EE1F7F /* BiometricAuthViewModel.swift */,
 			);
-			path = BiometricAuth;
+			path = biometricAuth;
 			sourceTree = "<group>";
 		};
 		53DBB0B42C56A21F00EE1F7F /* pages */ = {
 			isa = PBXGroup;
 			children = (
-				53AD1C582C592B19003DA6E0 /* favorites */,
-				530DF73F2C57D48F0089100E /* settings */,
-				53DBB0B52C56A26400EE1F7F /* productsList */,
+				53E77CAC2C5BA283007CBD48 /* main */,
 				53DBB0992C56769800EE1F7F /* login */,
 			);
 			path = pages;
@@ -330,11 +311,30 @@
 			path = productsList;
 			sourceTree = "<group>";
 		};
+		53E77CAB2C5BA257007CBD48 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				530DF7402C57D4CA0089100E /* SettingsView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		53E77CAC2C5BA283007CBD48 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				53DBB09C2C567D1E00EE1F7F /* MainView.swift */,
+				53AD1C582C592B19003DA6E0 /* favorites */,
+				530DF73F2C57D48F0089100E /* settings */,
+				53DBB0B52C56A26400EE1F7F /* productsList */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
 		53F0883F2C58230000687E93 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				53F088422C5836CC00687E93 /* ToggleDarkModeButton.swift */,
 				53F088402C58231100687E93 /* PickLanguageView.swift */,
-				53F088422C5836CC00687E93 /* ToggleDarkModeView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -441,7 +441,7 @@
 				53AD1C5B2C592B2D003DA6E0 /* FavoritesView.swift in Sources */,
 				53DBB0A12C5682F500EE1F7F /* LottieView.swift in Sources */,
 				53DBB09D2C567D1E00EE1F7F /* MainView.swift in Sources */,
-				53F088432C5836CC00687E93 /* ToggleDarkModeView.swift in Sources */,
+				53F088432C5836CC00687E93 /* ToggleDarkModeButton.swift in Sources */,
 				530DF72D2C57A58F0089100E /* WebImageView.swift in Sources */,
 				53DBB0B22C56998200EE1F7F /* BiometricAuthViewModel.swift in Sources */,
 				53DBB0B02C56995600EE1F7F /* BiometricAuthView.swift in Sources */,

@@ -17,38 +17,40 @@ struct LoginView: View {
     
     private let successUser = "testuser"
     private let successPassword = "12345678"
-
+    
     var body: some View {
         VStack {
-            LottieView(filename: "balbazor.json")
-                .frame(height: 220)
-            
-            Text("Login")
-                .font(.title)
-            
-            TextField("Username", text: $username)
-                .padding()
-                .textFieldStyle(.roundedBorder)
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
-           
-            SecureField("Password", text: $password)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            Button("Login") {
-                // Simulate login validation
-                if username.lowercased() == successUser.lowercased() && password == successPassword {
-                    vm.loginUser()
-                } else {
-                    showAlert = true
-                    alertMessage = "Invalid username or password."
-                    resetInputs()
+            ScrollView{
+                LottieView(filename: "balbazor.json")
+                    .frame(height: 220)
+                
+                Text("Login")
+                    .font(.title)
+                
+                TextField("Username", text: $username)
+                    .padding()
+                    .textFieldStyle(.roundedBorder)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                
+                SecureField("Password", text: $password)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button("Login") {
+                    // Simulate login validation
+                    if username.lowercased() == successUser.lowercased() && password == successPassword {
+                        vm.loginUser()
+                    } else {
+                        showAlert = true
+                        alertMessage = "Invalid username or password."
+                        resetInputs()
+                    }
                 }
+                .padding()
+                
+                BiometricAuthView(hasLoggedIn: $vm.hasLoggedIn)
             }
-            .padding()
-            
-            BiometricAuthView(hasLoggedIn: $vm.hasLoggedIn)
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -59,7 +61,7 @@ struct LoginView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
-
+        
     }
     
     private func resetInputs() {

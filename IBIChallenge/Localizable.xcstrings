@@ -251,7 +251,7 @@
         }
       }
     },
-    "toggle dark mode" : {
+    "Toggle Dark Mode" : {
       "localizations" : {
         "he" : {
           "stringUnit" : {

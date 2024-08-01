@@ -19,7 +19,7 @@ struct SettingsView: View {
 
                 PickLanguageView(chosenLanguage: $appVM.chosenLanguage)
                 
-                TextActionButton(action: appVM.toggleDarkMode, text: "toggle dark mode")
+                ToggleDarkModeButton(action: appVM.toggleDarkMode)
                 .padding(.top, 20)
                 
                 Spacer()
